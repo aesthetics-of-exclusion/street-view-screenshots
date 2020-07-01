@@ -78,7 +78,13 @@ async function takeScreenshot (address, dimensions) {
   console.log(`Taking Street View screenshot for address ${address}...`)
   console.log('  ', url)
 
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      'no-sandbox',
+      'disable-setuid-sandbox'
+    ]
+  })
   const page = await browser.newPage()
 
   try {
