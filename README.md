@@ -1,9 +1,9 @@
 # Street View Screenshots
 
-Run:
+To take a single screenshot, run:
 
-    cat ../download-pois/data/amsterdam-pois.geojson | jq -c '.features[]' | ./run.sh
+    ./index.js -c amsterdam
 
-Or:
+To take 100 screenshots, run:
 
-    ./examples.sh
+    ./run.sh 100
